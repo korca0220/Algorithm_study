@@ -15,7 +15,7 @@ const int coverType[4][3][2] = {
 int t_input;
 int H,W;
 
-bool set(char board[][20], int y, int x, int type, int delta, int H, int W){
+bool set(char board[20][20], int y, int x, int type, int delta, int H, int W){
 
     bool ok = true;
     for(int i=0; i<3; i++){ // covertType의 개수 4개, 바뀔 수 있는 위치 3개 
@@ -34,7 +34,7 @@ bool set(char board[][20], int y, int x, int type, int delta, int H, int W){
     return ok;
 }
 
-int cover(char board[][20], int H, int W){
+int cover(char board[20][20], int H, int W){
 
     // 아직 채우지 못한 칸은 가장 위의 왼쪽부터 찾는다
     int y = -1, x = -1;
