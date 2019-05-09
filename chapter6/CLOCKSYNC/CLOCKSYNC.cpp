@@ -1,5 +1,5 @@
-그림과 같이 4 x 4 개의 격자 형태로 배치된 16개의 시계가 있다. 이 시계들은 모두 12시, 3시, 6시, 혹은 9시를 가리키고 있다. 이 시계들이 모두 12시를 가리키도록 바꾸고 싶다.
 /*
+그림과 같이 4 x 4 개의 격자 형태로 배치된 16개의 시계가 있다. 이 시계들은 모두 12시, 3시, 6시, 혹은 9시를 가리키고 있다. 이 시계들이 모두 12시를 가리키도록 바꾸고 싶다.
 시계의 시간을 조작하는 유일한 방법은 모두 10개 있는 스위치들을 조작하는 것으로, 각 스위치들은 모두 적게는 3개에서 많게는 5개의 시계에 연결되어 있다. 한 스위치를 누를 때마다, 해당 스위치와 연결된 시계들의 시간은 3시간씩 앞으로 움직인다. 스위치들과 그들이 연결된 시계들의 목록은 다음과 같다.
 
 0	0, 1, 2
@@ -30,6 +30,7 @@
 2
 9
 */
+
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
@@ -51,7 +52,13 @@ const char linked[SWITCHES][CLOCKS+1] = {
     "...XXX...X...X.."};
 
 // 모든 시게가 12시를 가리키고 있는지 확인
-bool areAligned(const vector<int>& clocks);
+bool areAligned(const vector<int>& clocks){
+
+    for(int i=0; i<CLOCKS; i++){
+        if(clocks[i] != 12) return false;
+    }
+    return true;
+}
 
 // swtch번 시계를 누른다
 void push(vector<int>& clocks, int swtch){
@@ -75,12 +82,27 @@ int solve(vector<int>& clocks, int swtch){
     for(int cnt = 0; cnt<4; cnt++){
         ret = min(ret, cnt + solve(clocks, swtch+1));
         push(clocks, swtch);
-    }
+    }    
     return ret;
 }
 
 int main(){
 
+    int t_input;
+
+    vector<int> clocks;
+    clocks.reserve(16);
+
+    scanf("%d", &t_input);
+    while(t_input--){
+        int ret = 0;
+        for(int i=0; i<16; i++){
+            scanf("%d", &clocks[i]);
+        }
+        ret = solve(clocks, 0);
+        if(ret >= INF) ret = -1;
+        printf("%d\n", ret);
+    }
 
     return 0;
 }
