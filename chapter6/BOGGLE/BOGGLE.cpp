@@ -19,9 +19,11 @@ bool inRange(int y, int x){
 
 bool hasWord(int y, int x, const string &word){
 
+    //범위 안에 없는 경우
     if(!inRange(y, x)) return false;
     
-    if(boggle[y][x] != word[0]) return false;
+    //첫 글자부터 안맞는 경우
+    if(boggle[y][x] != word[0]) return false; 
 
     if(word.size() ==1) return true;
 
