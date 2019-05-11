@@ -47,3 +47,21 @@ string reverse(string::iterator& it){
 
     return string("x") + lowerLeft + lowerRight + upperLeft + upperRight;
 }
+
+int main(){
+
+    int t_input;
+    string s_input;
+    cin.sync_with_stdio(false);
+    
+    scanf("%d", &t_input);
+
+    while(t_input--){
+        cin >> s_input;
+        string::iterator s_iter=s_input.begin();
+        cout << reverse(s_iter) << "\n";
+    }
+
+
+    return 0;
+}
