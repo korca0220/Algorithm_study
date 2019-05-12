@@ -34,7 +34,29 @@
 #include <algorithm>
 using namespace std;
 
+int input;
+
+
 int main(){
+
+    scanf("%d", &input);
+    
+    if(input <100){
+        printf("%d\n", input);
+    }
+    else{
+        int count = 99;
+        for(int i=100; i<=input; i++){
+            int first = i/100;
+            int second = (i/10)%10;
+            int third = i%10;
+
+            if( (first-second) == (second-third)) {
+                count++;
+            }
+        }
+        printf("%d\n", count);
+    }
 
 
     return 0;
