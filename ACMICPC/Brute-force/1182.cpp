@@ -15,7 +15,7 @@ N개의 정수로 이루어진 수열이 있을 때, 길이가 양수인 부분�
 1
 */
 
-#include <iostream>1
+#include <iostream>
 #include <cstdio>
 using namespace std;
 
