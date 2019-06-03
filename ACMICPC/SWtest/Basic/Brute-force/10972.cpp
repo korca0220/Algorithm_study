@@ -12,11 +12,9 @@ bool getPer(vector<int> &perma, int n){
     if (i<=0) return false;
 
     int j = n-1;
-    while(perma[j] <= perma[i-1]) j-=1;
-      
+    while(perma[j] <= perma[i-1]) j-=1;      
     swap(perma[j], perma[i-1]);
     j = n-1;
-
 
     while(i < j){
         swap(perma[i], perma[j]);
@@ -50,9 +48,9 @@ int main(){
 
 
     // STL 사용
-    if(next_permutation(number.begin(), number.end())){
-        for(int i=0; i<number.size(); i++)cout << number[i] << " ";
-    }else cout << "-1";
+    // if(next_permutation(number.begin(), number.end())){
+    //     for(int i=0; i<number.size(); i++)cout << number[i] << " ";
+    // }else cout << "-1";
 
     return 0;
 }
