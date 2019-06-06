@@ -12,7 +12,7 @@
             "args": [
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}.o"
             ],
             "group": "build",
 
@@ -73,7 +73,7 @@
 
             "label": "execute",
 
-            "command": "cd ${fileDirname} && ./${fileBasenameNoExtension}",
+            "command": "cd ${fileDirname} && ./${fileBasenameNoExtension}.o",
 
             "group": "test"
 
