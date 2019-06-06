@@ -2,3 +2,4 @@
 *.exe
 /.vscode/ipch
 /.vscode/tesks.json
+/.vscode
