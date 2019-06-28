@@ -23,7 +23,7 @@ int getDp(){
         v[i] = 0;
         for(int j=1; j<i; j++){
             if(in[i] > in[j] && dp[i] < dp[j]+1){
-                dp[i] = dp[i] + 1;
+                dp[i] = dp[j] + 1;
                 v[i] = j;
             }
         }
