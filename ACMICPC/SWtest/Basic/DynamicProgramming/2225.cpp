@@ -11,7 +11,7 @@ int main(){
 
     scanf("%d %d", &N, &K);
 
-    dp[0][0] = 1LL;
+    dp[0][0] = 1LL; //long long
     for(int i = 1; i<=K; i++){
         for(int j = 0; j<=N; j++){
             for(int k = 0; k<=j; k++){
