@@ -11,8 +11,8 @@ vector<int> gen(int n){
 
     vector<int> temp(MAX);
     for(int i=0; i<MAX; i++){
-        temp[i] = (n&3);
-        n >>= 2;
+        temp[i] = (n&3); // 00000000(2) 에서 뒤의 두자리를 저장(4진법) 00 00 00 00 2^2
+        n >>= 2; // 저장한 뒤의 두자리 shift right 
     }
     return temp;
 }
@@ -20,7 +20,7 @@ vector<int> gen(int n){
 int check(vector<vector<int>> &a, vector<int> &dirs){
 
     vector<vector<pair<int, bool>>> d(N, vector<pair<int,bool>>(N)); // N개의 벡터를 pair 벡터 N개로 초기화
-    
+    // 2-array + pair(first,second) , first = value, second = T/F
     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
             d[i][j].first = a[i][j];
