@@ -67,7 +67,7 @@ int main(){
     scanf("%d", &T);
 
     while(T--){
-        int n,m;
+        int n,m;s
         scanf("%d %d", &n, &m);
         vector<string> in(n+2);
         for(int i=1; i<=n; i++){
