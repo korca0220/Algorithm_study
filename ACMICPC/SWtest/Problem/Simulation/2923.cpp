@@ -10,9 +10,9 @@ using namespace std;
 int n,m;
 int dx[] = {0,0,-1,1};
 int dy[] = {-1,1,0,0};
-vector<pair<int,int>> group;
 
-void bfs(int s, int e, vector<vector<bool>> &check, vector<string> in){
+
+void bfs(int s, int e, vector<vector<bool>> &check, vector<string> in, vector<pair<int,int>> &group){
 
     queue<pair<int,int>> q;
     q.push(make_pair(s,e));
@@ -45,8 +45,8 @@ void simulate(vector<string> &in){
         for(int j=0; j<m; j++){
             if(in[i][j] == '.') continue;
             if(check[i][j]) continue;
-            group.clear();
-            bfs(i,j, check, in);
+            vector<pair<int,int>> group;
+            bfs(i,j, check, in, group);
             
             vector<int> low(m, -1); // col-low-value
             for(auto &p : group){
