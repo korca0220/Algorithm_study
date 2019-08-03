@@ -22,7 +22,7 @@ int main(){
                     dp[j] = dp[j-dirs[i]]+1;
                 }
             }   
-        }
+        } 
     }
     printf("%d", dp[k]);
     return 0;
