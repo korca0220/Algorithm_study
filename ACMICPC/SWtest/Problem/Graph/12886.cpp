@@ -4,7 +4,7 @@
 #include <algorithm>
 using namespace std;
 
-bool check[500][500];
+bool check[1501][1501];
 int sum = 0;
 
 void dfs(int x, int y){
@@ -26,14 +26,14 @@ void dfs(int x, int y){
 
 int main(){
 
-    vector<int> a(3);
-    scanf("%d %d %d", &a[0], &a[1], &a[2]);
-    sum = a[0] + a[1] + a[2];
+    int a,b,c;
+    scanf("%d %d %d", &a, &b, &c);
+    sum = a+b+c;
     if(sum%3 != 0){
         printf("0");
         return 0;
     }
-    dfs(a[0], a[1]);
+    dfs(a,b);
     if(check[sum/3][sum/3]){
         printf("1");
     }else printf("0");
