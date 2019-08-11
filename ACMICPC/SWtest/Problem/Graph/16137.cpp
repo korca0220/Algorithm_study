@@ -51,7 +51,7 @@ int bfs(){
                     int nt = (dist[x][y][t]+1)%in[nx][ny];
                     if(dist[nx][ny][nt] == -1){
                         dist[nx][ny][nt] = dist[x][y][t] + 1;
-                        q.emplace(nx,ny,nt);
+                        q.emplace(nx,ny,nt); 
                     }
                 }
             }            
