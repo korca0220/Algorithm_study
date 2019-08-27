@@ -32,7 +32,7 @@ int main(){
     cin.tie(NULL);
 
     cin >> n >> k;
-    if(getChar(0,0 ,0,0)){
+    if(getChar(0,0 ,0, 0)){
         cout << in;
     }else cout << "-1";
 
