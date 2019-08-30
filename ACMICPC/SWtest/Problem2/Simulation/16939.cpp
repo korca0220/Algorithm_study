@@ -11,121 +11,123 @@ bool check(vector<int> q){
         }
     }
     return true;
+
 }
 
-vector<int> lu(vector<int> a) {
-    int temp = a[1];
-    a[1] = a[5];
-    a[5] = a[9];
-    a[9] = a[24];
-    a[24] = temp;
-    temp = a[3];
-    a[3] = a[7];
-    a[7] = a[11];
-    a[11] = a[22];
-    a[22] = temp;
-    return a;
+vector<int> ur(vector<int> q){
+    int temp = q[2];
+    q[2] = q[20];
+    q[20] = q[11];
+    q[11] = q[13];
+    q[13] = temp;
+    temp = q[1];
+    q[1] = q[18];
+    q[18] = q[12];
+    q[12] = q[15];
+    q[15] = temp;
+    return q;
 }
-vector<int> ld(vector<int> a) {
-    a = lu(a);
-    a = lu(a);
-    a = lu(a);
-    return a;
+vector<int> ul(vector<int> q){
+    q = ur(q);
+    q = ur(q);
+    q = ur(q);
+    return q;
 }
-vector<int> ru(vector<int> a) {
-    int temp = a[2];
-    a[2] = a[6];
-    a[6] = a[10];
-    a[10] = a[23];
-    a[23] = temp; 
-    temp = a[4];
-    a[4] = a[8];
-    a[8] = a[12];
-    a[12] = a[21];
-    a[21] = temp;
-    return a;
+vector<int> dr(vector<int> q){
+    int temp = q[4];
+    q[4] = q[19];
+    q[19] = q[9];
+    q[9] = q[14];
+    q[14] = temp;
+    temp = q[3];
+    q[3] = q[17];
+    q[17] = q[10];
+    q[10] = q[16];
+    q[16] = temp;
+    return q;
 }
-vector<int> rd(vector<int> a) {
-    a = ru(a);
-    a = ru(a);
-    a = ru(a);
-    return a;
+vector<int> dl(vector<int> q){
+    q = dr(q);
+    q = dr(q);
+    q = dr(q);
+    return q;
 }
-vector<int> ul(vector<int> a) {
-    int temp = a[13];
-    a[13] = a[5];
-    a[5] = a[17];
-    a[17] = a[21];
-    a[21] = temp;
-    temp = a[14];
-    a[14] = a[6];
-    a[6] = a[18];
-    a[18] = a[22];
-    a[22] = temp;
-    return a;
+vector<int> rr(vector<int> q){
+    int temp = q[2];
+    q[2] = q[6];
+    q[6] = q[10];
+    q[10] = q[23];
+    q[23] = temp;
+    temp = q[4];
+    q[4] = q[8];
+    q[8] = q[12];
+    q[12] = q[21];
+    q[21] = temp;
+    return q;
 }
-vector<int> ur(vector<int> a) {
-    a = ul(a);
-    a = ul(a);
-    a = ul(a);
-    return a;
+vector<int> rl(vector<int> q){
+    q = rr(q);
+    q = rr(q);
+    q = rr(q);
+    return q;
 }
-vector<int> dl(vector<int> a) {
-    int temp = a[15];
-    a[15] = a[7];
-    a[7] = a[19];
-    a[19] = a[23];
-    a[23] = temp;
-    temp = a[16];
-    a[16] = a[8];
-    a[8] = a[20];
-    a[20] = a[24];
-    a[24] = temp;
-    return a;
+vector<int> lr(vector<int> q){
+    int temp = q[1];
+    q[1] = q[24];
+    q[24] = q[9];
+    q[9] = q[5];
+    q[5] = temp;
+    temp = q[3];
+    q[3] = q[22];
+    q[22] = q[11];
+    q[11] = q[7];
+    q[7] = temp;
+    return q;
 }
-vector<int> dr(vector<int> a) {
-    a = dl(a);
-    a = dl(a);
-    a = dl(a);
-    return a;
+vector<int> ll(vector<int> q){
+    q = lr(q);
+    q = lr(q);
+    q = lr(q);
+    return q;
 }
-vector<int> fl(vector<int> a) {
-    int temp = a[3];
-    a[3] = a[17];
-    a[17] = a[10];
-    a[10] = a[16];
-    a[16] = temp;
-    temp = a[4];
-    a[4] = a[19];
-    a[19] = a[9];
-    a[9] = a[14];
-    a[14] = temp;
-    return a;
+
+vector<int> fr(vector<int> q){
+    int temp = q[23];
+    q[23] = q[19];
+    q[19] = q[7];
+    q[7] = q[15];
+    q[15] = temp;
+    temp = q[24];
+    q[24] = q[19];
+    q[19] = q[7];
+    q[7] = q[15];
+    q[15] = temp;
+    return q;
 }
-vector<int> fr(vector<int> a) {
-    a = fl(a);
-    a = fl(a);
-    a = fl(a);
-    return a;
+vector<int> fl(vector<int> q){
+    q = fr(q);
+    q = fr(q);
+    q = fr(q);
+    return q;
 }
-vector<int> bl(vector<int> a) {
-    int temp = a[1];
-    a[1] = a[18];
-    a[18] = a[12];
-    a[12] = a[15];
-    a[15] = temp;
-    temp = a[2];
-    a[2] = a[20];
-    a[20] = a[11];
-    a[11] = a[13];
-    a[13] = temp;
-    return a;
+vector<int> br(vector<int> q){
+    int temp = q[22];
+    q[22] = q[18];
+    q[18] = q[6];
+    q[6] = q[13];
+    q[13] = temp;
+    temp = q[21];
+    q[21] = q[17];
+    q[17] = q[5];
+    q[5] = q[14];
+    q[14] = temp;
+    return q;
 }
-vector<int> br(vector<int> a) {
-    a = bl(a);
-    a = bl(a);
-    a = bl(a);
-    return a;
+vector<int> bl(vector<int> q){
+    q = br(q);
+    q = br(q);
+    q = br(q);
+    return q;
 }
 
 int main(){
@@ -137,15 +139,15 @@ int main(){
     for(int i=1; i<=24; i++){
         cin >> q[i];
     }
-    if(check(lu(q)) || check(ld(q)) || check(ru(q)) || check(rd(q))){
+    if(check(ur(q)) || check(ul(q)) || check(dr(q)) || check(dl(q))){
         cout << "1";
         return 0;
     }
-    if(check(ul(q)) || check(ur(q)) || check(dl(q)) || check(dr(q))){
+    if(check(rr(q)) || check(rl(q)) || check(lr(q)) || check(ll(q))){
         cout << "1";
         return 0;
     }
-    if(check(fl(q)) || check(fr(q)) || check(bl(q)) || check(br(q))){
+    if(check(fr(q)) || check(fl(q)) || check(br(q)) || check(bl(q))){
         cout << "1";
         return 0;
     }
