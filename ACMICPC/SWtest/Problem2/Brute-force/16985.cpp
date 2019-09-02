@@ -53,7 +53,7 @@ void go(vector<vector<vector<int>>> &b, int index){
     if(index == 5){
         int cur = bfs(b);
         if(cur != -1){
-            if(ans==-1 || ans > cur)ans = cur;
+            if(ans==-1 || ans` > cur)ans = cur;
         }
         return ;
     }
