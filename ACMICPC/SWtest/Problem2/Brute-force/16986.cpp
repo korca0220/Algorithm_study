@@ -20,12 +20,10 @@ int main(){
         }
     }
     // set - person
-    // in[1].resize(20);
     for(int i=0; i<20; i++){
         cin >> in[1][i];
         in[1][i] -= 1;
     }
-    // in[2].resize(20);
     for(int i=0; i<20; i++){
         cin >> in[2][i];
         in[2][i] -= 1;
