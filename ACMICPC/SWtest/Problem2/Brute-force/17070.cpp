@@ -23,7 +23,7 @@ int go(int x, int y, int dir){
             ans += go(x, y+1, 0);
         }
         if(x+1 < n && y+1 < n && map[x+1][y] == 0 && map[x][y+1] == 0 && map[x+1][y+1] == 0){
-            ans += go(x+1, y+1, 1);
+            ans += go(x+1, y+1, 1 );
         }
         if(x+1 < n && map[x+1][y] == 0){
             ans += go(x+1, y, 2);
