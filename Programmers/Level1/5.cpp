@@ -5,8 +5,11 @@ using namespace std;
 
 string solution(string s) {
     string answer; 
-    if(s.length() % 2 == 0){
-        answer = s[s.length/2-1] + s[s.length/2];
-    }else answer = s[s.length/2];
+    int len = s.length();
+    if(len % 2 == 0){
+        int half = len/2;
+        answer += s[half-1];
+        answer += s[half];
+    }else answer = s[s.length()/2];
     return answer;
 }
