@@ -25,7 +25,7 @@ int solution(vector<vector<int>> baseball) {
                     if(a==b) continue;
                     if(str[a] == str2[b]){
                         ball+=1;
-                    }
+                    } 
                 }
             }            
             if(ball != baseball[j][2]) break;
