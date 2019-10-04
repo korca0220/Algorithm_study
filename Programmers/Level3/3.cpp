@@ -3,45 +3,36 @@
 #include <queue>
 #include <utility>
 #include <cstring>
+#include <iostream>
 using namespace std;
 
-bool check[201][201];
-void bfs(int s, int e, vector<vector<int>> &line){
+bool check[201];
+void bfs(int s, vector<vector<int>> &computers){
 
-    queue<pair<int,int>> q;
-    check[s][e] = true;
+    queue<int> q;
+    q.push(s);
+    check[s] = true;
     while(!q.empty()){
-        int x = q.front().first;
-        int y = q.front().second;
+        int now = q.front();
         q.pop();
-        for(int i=0; i<line[i].size
-
+        for(int i=0; i<computers[now].size(); i++){
+            if(check[i] == false && computers[now][i] == 1){
+                q.push(i);
+                check[i] = true;
+            }
+        }
     }
-
 }
 
 int solution(int n, vector<vector<int>> computers) {
     int answer = 0;
-    int len = computers.size();
     
     memset(check, false, sizeof(check));
-    vector<vector<int>> line(len, vector<int>(len));
-    for(int i=0; i<len; i++){
-        for(int j=0; j<len; j++){
-            if(i==j)continue;
-            if(computers[i][j] == 1){
-                line[i].push_back(j);
-                line[j].push_back(i);
-            }
-        }
-    }
 
-    for(int i=0; i<len; i++){
-        for(int j=0; j<len; j++){
-            if(check[i][j] == false){
-                bfs(i,j);
-                answer+=1;
-            }
+    for(int i=0; i<n; i++){
+        if(check[i] == false){
+            bfs(i, computers);
+            answer+=1;
         }
     }
 
